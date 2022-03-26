@@ -1,0 +1,10 @@
+{
+        "name": "GSales",
+        "id": "2b334269-e4ca-4b8b-98ac-f668a8ba22f8",
+        "project": "b0wantux",
+        "runtime": "python3.9",
+        "endpoint": "https://nkndj3.deta.dev",
+        "region": "us-west-1",
+        "visor": "enabled",
+        "http_auth": "disabled"
+}
