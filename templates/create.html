@@ -1,0 +1,42 @@
+<html>
+  <head>
+      <title>Test</title>
+      <link href="{{ url_for('static', path='/css/styles.css')}}" rel="stylesheet" />
+      <link href="{{ url_for('static', path='/css/navbar.css')}}" rel="stylesheet" />
+  </head>
+
+  <nav class="navbar">
+      <div id="trapezoid">
+          <a href="/" class="expandHome">Home</a>
+          <a href="/create" class="expandHome">Create</a>
+          <a href="/search" class="expandHome">Search</a>
+          <a href="/about" class="expandHome">About Me</a>
+      </div>
+  </nav>
+  <div class="wrapper">
+    <canvas id="introduction-canvas"></canvas>
+
+    <div class="introduction-canvas--overflow"></div>
+
+    <form class="publish" action="/submit" enctype="multipart/form-data" method="post">
+      <h1 align="center">Publish a sale</h1>
+      <input type="text" name=title placeholder="Title" required>
+      <input type="text" name=description placeholder="Description" required>
+      <input type="text" name=street placeholder="Street Name" required>
+      <input type="text" name=city placeholder="City" required>
+      <input type="text" name=zip placeholder="Zip Code" required>
+      <input type="text" name=state placeholder="State" required>
+      <label for="start_date" >Start Date:</label>
+      <input type="date" name=start_date placeholder="Start Date" required>
+      <label for="end_date" >End Date:</label>
+      <input type="date" name=end_date placeholder="End Date" required>
+
+      <center>
+        <button type=submit>Publish</button>
+      </center>
+  </form>
+
+    <script type="text/javascript" src="{{ url_for('static', path='/js/background.js')}}"></script>
+
+  </div>
+</html>

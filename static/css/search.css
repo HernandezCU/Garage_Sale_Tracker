@@ -1,0 +1,72 @@
+.search {
+  overflow: hidden;
+  background-color: white;
+  padding: 40px 30px 30px 30px;
+  border-radius: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -webkit-transition: -webkit-transform 300ms, box-shadow 300ms;
+  -moz-transition: -moz-transform 300ms, box-shadow 300ms;
+  transition: transform 300ms, box-shadow 300ms;
+  box-shadow: 5px 10px 10px rgba(2, 128, 144, 0.2);
+}
+
+.search input[type=text]{
+  font-family: "Asap", sans-serif;
+  font-size: 30px;
+  text-align: center;
+  float: left;
+  width: 75%;
+  height: 50px;
+  background-color: white;
+  border: none;
+  border-bottom: #72B7E3 solid 3px;
+  margin-bottom: 20px;
+  margin-right: 2.5%;
+}
+
+.search input[type=submit]{
+  font-family: "Asap", sans-serif;
+  font-size: 30px;
+  color: #fff;
+  background-color: #72B7E3;
+  border: none;
+  border-radius: 10px;
+  text-align: center;
+  width: 100%;
+  height: 50px;
+}
+
+.search input:focus, .search textarea:focus,  .search select:focus{
+  outline: none;
+}
+
+.search input[type=submit]:hover{
+  font-family: "Asap", sans-serif;
+  background-color: #2D8CCB;
+}
+
+.search select{
+  font-family: "Asap", sans-serif;
+  font-size: 30px;
+  color: dimgray;
+  width: 20%;
+  height: 50px;
+  margin-left: 2.5%;
+  border: none;
+  border-bottom: #72B7E3 solid 3px;
+}
+
+.search input:focus::placeholder {
+  color: transparent;
+}
+
+
+

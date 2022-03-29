@@ -1,0 +1,25 @@
+<html>
+  <head>
+      <title>Test</title>
+      <link href="{{ url_for('static', path='/css/styles.css')}}" rel="stylesheet" />
+      <link href="{{ url_for('static', path='/css/navbar.css')}}" rel="stylesheet" />
+  </head>
+
+  <nav class="navbar">
+      <div id="trapezoid">
+          <a href="/" class="expandHome">Home</a>
+          <a href="/create" class="expandHome">Create</a>
+          <a href="/search" class="expandHome">Search</a>
+          <a href="/about" class="expandHome">About Me</a>
+      </div>
+  </nav>
+  <div class="wrapper">
+
+    <canvas id="introduction-canvas"></canvas>
+
+    <div class="introduction-canvas--overflow"></div>
+
+    <script type="text/javascript" src="{{ url_for('static', path='/js/background.js')}}"></script>
+
+  </div>
+</html>

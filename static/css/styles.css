@@ -1,0 +1,141 @@
+/*body {*/
+/*  background-color: #f45b69;*/
+/*  font-family: "Asap", sans-serif;*/
+/*}*/
+
+.publish {
+  overflow: hidden;
+  background-color: white;
+  padding: 40px 30px 30px 30px;
+  border-radius: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 500px;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -webkit-transition: -webkit-transform 300ms, box-shadow 300ms;
+  -moz-transition: -moz-transform 300ms, box-shadow 300ms;
+  transition: transform 300ms, box-shadow 300ms;
+  box-shadow: 5px 10px 10px rgba(2, 128, 144, 0.2);
+}
+
+.publish::before, .publish::after {
+  content: "";
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-top-left-radius: 40%;
+  border-top-right-radius: 45%;
+  border-bottom-left-radius: 35%;
+  border-bottom-right-radius: 40%;
+  z-index: -1;
+}
+
+.publish::before {
+  left: 40%;
+  bottom: -130%;
+  background-color: rgba(69, 105, 144, 0.15);
+  -webkit-animation: wawes 6s infinite linear;
+  -moz-animation: wawes 6s infinite linear;
+  animation: wawes 6s infinite linear;
+}
+
+.publish::after {
+  left: 35%;
+  bottom: -125%;
+  background-color: rgba(2, 128, 144, 0.2);
+  -webkit-animation: wawes 7s infinite;
+  -moz-animation: wawes 7s infinite;
+  animation: wawes 7s infinite;
+}
+
+.publish input:focus, .publish textarea:focus,  .publish select:focus{
+  outline: none;
+}
+
+.publish input {
+  font-family: "Asap", sans-serif;
+  display: block;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 15px;
+  font-size: 16px;
+  background: white;
+  width: 100%;
+  padding: 10px 10px;
+  /*margin: 15px -10px;*/
+  border-color: #456990;
+  margin: 0 auto 20px;
+}
+
+.publish input:focus::placeholder {
+  color: transparent;
+}
+
+.publish label{
+  font-family: "Asap", sans-serif;
+  margin: 0 auto 20px;
+}
+
+.publish button {
+  font-family: "Asap", sans-serif;
+  cursor: pointer;
+  color: #fff;
+  font-size: 16px;
+  text-transform: uppercase;
+  width: 100%;
+  height: 50px;
+  border: 0;
+  padding: 10px 0;
+  margin-top: 10px;
+  margin-left: -5px;
+  border-radius: 10px;
+  background-color: #72B7E3;
+  -webkit-transition: background-color 300ms;
+  -moz-transition: background-color 300ms;
+  transition: background-color 300ms;
+}
+
+.publish button:hover {
+  background-color: #2D8CCB;
+}
+
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: "Asap", sans-serif;
+}
+
+.wrapper {
+  display: table;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+canvas {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.introduction-canvas--overflow {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: block;
+  background: linear-gradient(
+    to right bottom,
+    rgba(41, 8, 48, 0.5) 0,
+    rgba(82, 65, 143, 0.5) 50%,
+    rgba(114, 183, 227, 0.5) 100%
+  );
+}
+
+

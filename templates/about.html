@@ -1,0 +1,46 @@
+<html>
+  <head>
+        <title>Test</title>
+        <link href="{{ url_for('static', path='/css/styles.css')}}" rel="stylesheet" />
+        <link href="{{ url_for('static', path='/css/navbar.css')}}" rel="stylesheet" />
+        <link href="{{ url_for('static', path='/css/search.css')}}" rel="stylesheet" />
+  </head>
+
+  <nav class="navbar">
+    <div id="trapezoid">
+        <a href="/" class="expandHome">Home</a>
+        <a href="/create" >Create</a>
+        <a href="/search" >Search</a>
+        <a href="/about" >About Me</a>
+    </div>
+  </nav>
+  <div class="wrapper">
+
+    <canvas id="introduction-canvas"></canvas>
+
+    <div class="introduction-canvas--overflow"></div>
+    <div>
+        <h1>About Me</h1>
+        <p>
+            I am a student at the University of Waterloo. I am currently a third year Computer Science student.
+            I am a passionate programmer and I am always looking to learn new things.
+            I built this website to help me learn more about programming and to help me find new projects to work on.
+            I hope you enjoy my work!
+        </p>
+        <a href="LINK">Github</a>
+        <a href="LINK">LinkedIn</a>
+        <a href="LINK">Resume</a>
+        <a href="LINK">Email</a>
+
+    </div>
+
+  </div>
+
+
+    <script type="text/javascript" src="{{ url_for('static', path='/js/background.js')}}"></script>
+
+  </div>
+
+
+
+</html>

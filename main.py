@@ -3,7 +3,7 @@ from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from deta import Deta
-import uvicorn
+
 
 # Key Name
 # 5mpt6a
@@ -17,56 +17,36 @@ import uvicorn
 app = FastAPI()
 templates = Jinja2Templates(directory="templates")
 app.mount("/static", StaticFiles(directory="static"), name="static")
-
 deta = Deta("b0wantux_NBtEAwKr6yWbqXqSFL2MN8S7wSu7DaYS")
-
 g_sales_db = deta.Base("garage_sales")
 
 
 @app.get("/", response_class=HTMLResponse)
-async def read_root():
-    return """
-    <html>
-        <title>Garage Sale Locator</title>
-        <center>
-            <h1 style="font-family: Bahnschrift, sans-serif; font-size:50px">Future home of Garage Sale Locator</h1>
-            <p  style="font-family: Bahnschrift, sans-serif; font-size:25px" class="w3-large w3-center">add <a href="/docs" target="_blank">/docs</a> to your url to view endpoints</p>
-        </center>
-        
-        <center>
-            <form action="/submit" enctype="multipart/form-data" method="post">
-                <label for="title">Title:</label>
-                <input name="title" type="text"><br>
-                
-                <label for="description">Description:</label>
-                <input name="description" type="text"><br>
-                
-                <label for="address">Address:</label>
-                <input name="address" type="text"><br>
-                
-                <label for="start_date">Start Date:</label>
-                <input name="start_date" type="date"><br>
-                
-                <label for="end_date">End Date:</label>
-                <input name="end_date" type="date">><br>
-                
-                <input type="submit">
-            </form>
-        </center>
-    </html>
-    """
+async def home(request: Request):
+    return templates.TemplateResponse("home.html", {"request": request})
+
+
+@app.get("/create", response_class=HTMLResponse)
+async def create(request: Request):
+    return templates.TemplateResponse("create.html", {"request": request})
+
+
+@app.get("/search", response_class=HTMLResponse)
+async def search(request: Request):
+    return templates.TemplateResponse("search.html", {"request": request})
+
+
+@app.get("/about", response_class=HTMLResponse)
+async def search(request: Request):
+    return templates.TemplateResponse("about.html", {"request": request})
 
 
 @app.post("/submit")
-def submit_gsale(title: str = Form(...), description: str = Form(...),
-                 address: str = Form(...), start_date: str = Form(...), end_date: str = Form(...)):
-    print(title)
-    print(description)
-    print(address)
-    print(start_date)
-    print(end_date)
-    g_sales_db.insert({"title": title, "description": description, "address": address,
-                       "start_date": start_date, "end_date": end_date})
+def submit_gsale(title: str = Form(...), description: str = Form(...), street: str = Form(...), city: str = Form(...),
+                 zip: str = Form(...), state: str = Form(...),start_date: str = Form(...), end_date: str = Form(...)):
+
+    g_sales_db.insert({"title": title, "description": description, "street": street, "city": city, "zip": zip,
+                       "state": state, "start_date": start_date, "end_date": end_date})
 
     return {"message": "success"}
 
@@ -78,6 +58,6 @@ async def read_item(request: Request, id: str, name: str):
     return templates.TemplateResponse("item.html", {"request": request, "id": id, "name": name})
 
 
-
 if __name__ == '__main__':
+    import uvicorn
     uvicorn.run("main:app", host="localhost", reload=True)
